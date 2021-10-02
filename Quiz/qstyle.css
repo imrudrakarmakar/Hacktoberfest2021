@@ -1,0 +1,91 @@
+h1{
+	font-family: serif;
+	text-align: center;
+	color: #fff;
+	font-size: 35px;
+}
+
+ul{
+	list-style: none;
+}
+
+li{
+	font-family: serif;
+	font-size: 2px;
+	color: #feb135;
+}
+
+input[type=radio]{
+	border: 0px;
+	width: 20px;
+	height: 2em;
+}
+
+p{
+	font-family: serif;
+}
+
+.quizcontainer{
+	background-color:silver;
+	border-radius: 8px;
+	width: 75%;
+	margin: auto;
+	margin-top: 190px;
+	padding-top: 5px;
+	position: relative;
+}
+
+.nextButton{
+	border-radius: 6px;
+	width: 150px;
+	height: 45px;
+	text-align: center;
+	background-color: #cc0000;
+	color: #fff;
+	font-weight: bold;
+	position: relative;
+	margin: auto;
+	padding-top: 20px;
+}
+
+.question{
+	font-family: serif;
+	border-radius: 6px;
+	width: 90%;
+	height: auto;
+	text-align: center;
+	background-color: #f2f205;
+	font-size: 2em;
+	margin: auto;
+	color: black;
+}
+
+.quizmessage{
+	font-family: serif;
+	border-radius: 6px;
+	width: 30%;
+	padding: 2px;
+	text-align: center;
+	background-color: peachpuff;
+	margin: auto;
+	color: red;
+}
+
+.choiceList{
+	font-family: serif;
+	color: red;
+	
+}
+
+.result{
+	font-family: serif;
+	border-radius: 6px;
+	width: 30%;
+	height: auto;
+	text-align: center;
+	background-color: linen;
+	font-size: 2em;
+	margin: auto;
+	margin-bottom: 35px;
+	text-align: center;
+}
