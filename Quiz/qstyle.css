@@ -62,7 +62,10 @@ p{
 
 .quizmessage{
 	font-family: serif;
-	border-radius: 6px;
+	border-top-left-radius: 6px;
+	border-top-right-radius:6px;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
 	width: 30%;
 	padding: 2px;
 	text-align: center;
