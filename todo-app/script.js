@@ -1,6 +1,8 @@
 const form = document.getElementById("form");
 const input = document.getElementById("input");
 const todosUL = document.getElementById("todos");
+const d = new Date();
+document.getElementById("date").innerHTML = d.toDateString();
 
 const todos = JSON.parse(localStorage.getItem("todos"));
 
