@@ -18,8 +18,12 @@ body{
 	margin: 0 auto;
 	top: 100px;
 	position: relative;
+    border: 8px solid rgb(143, 154, 155);
 	border-radius: 5px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+                0 6px 20px 0 rgba(0, 0, 0, 0.19),
+                0 6px 20px 0 rgba(0, 0, 0, 0.19),
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 #result{
 	height: 120px;
@@ -36,6 +40,7 @@ body{
 	text-align: right;
 	height: 60px;
 	margin: 10px 20px;
+    border-bottom:2px solid rgb(143, 154, 155);
 	font-size: 30px;
 }
 #keyboard{
@@ -49,7 +54,10 @@ body{
 	border-radius: 50%;
 	border-width: 0;
 	font-weight: bold;
-	font-size: 15px;
+	font-size: 20px;
+}
+.operator{
+    color: #20b2aa;
 }
 .number, .empty{
 	background-color: #eaedef;
@@ -64,22 +72,23 @@ body{
 	outline: 0;
 }
 button:nth-child(4){
-	font-size: 20px;
-	background-color: #20b2aa;
+	font-size: 30px;
+	color: #20b2aa;
 }
 button:nth-child(8){
-	font-size: 20px;
-	background-color: #ffa500;
+	font-size: 30px;
+	color: #20b2aa;
 }
 button:nth-child(12){
-	font-size: 20px;
-	background-color: #f08080;
+	font-size: 30px;
+	color: #20b2aa;
 }
 button:nth-child(16){
-	font-size: 20px;
-	background-color: #7d93e0;
+	font-size: 30px;
+	color: #20b2aa;
 }
 button:nth-child(20){
-	font-size: 20px;
-	background-color: #9477af;
+	font-size: 30px;
+    color: white;
+	background-color: #20b2aa;
 }
