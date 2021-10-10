@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Random Advice Generator</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
+    </head>
+    <style>
+        :root{
+    --green:#5fe382;
+    --blue:#5fd4e3;
+    --red:#f54040;
+    --purple:#be40f5;
+    --orange:orange;
+    --yellow:yellow;
+} /* Colors [Css Variables] */
+
+*{
+    padding:0;
+    margin:0;
+    transition-duration:0.5s;
+ /* user-select:none; just so you can copy the advices */
+  
+} /* [All Elements] */
+
+body{
+    height:100vh;
+    width:100vw;
+    background-color: #ffc0cb;
+}
+
+#cont{
+    /* Dimensions */
+    height:200px;
+    width:75vw;
+    padding:10px;
+    
+    /* Positioning */
+    position:absolute;
+    transform:translate(-50%,-50%);
+    top:50%;
+    left:50%;
+    
+    /* Shape and Background */
+    background:var(--orange);
+    border-radius:2.5px;
+    border:2px solid black;
+    
+    /* Text */
+    color:black;
+    font-size:25px;
+    font-weight:bolder;
+}
+
+#cont #output{
+    /* Dimensions */
+    width:90%;
+
+    /* Positioning */
+    position:absolute;
+    transform:translate(-50%,-50%);
+    top:50%;
+    left:50%;
+}
+
+button{
+    /* Dimensions */
+    width:50vw;
+    padding:10px;
+    
+    /* Positioning */
+    position:absolute;
+    transform:translate(-50%,-50%);
+    bottom:5%;
+    left:50%;
+    
+    /* Shape and Background */
+    background:orange;
+    border:none;
+    border-radius:2.5px;
+    border:2px solid black;
+    
+    /* Text */
+    color:black;
+    font-size:15px;
+    font-weight:bolder;
+}
+    </style>
+    <body>
+    
+        <!-- The Box -->        
+        <center id='cont'>            
+            <div id='output'>
+                Loading...
+            </div>
+            <!-- Output -->            
+        </center>
+        
+        <button id='button'>
+            Generate Random Advice
+        </button>        
+        <!-- Button -->
+    </body>
+<script>
+ 
+alert('\n Outputs ["Advices"] !')
+
+var colors = ['green','red','blue','purple','yellow','orange']
+// array of the colors (defined in css)
+
+var currentAdvice,currentColor = 4;
+
+// variables
+
+function setup(){
+   advice();
+   button.addEventListener('click',advice)
+   // when button clicked = advice()
+   
+} // setup [this will run by itself onload]
+
+function advice(){
+    loadJSON('https://api.adviceslip.com/advice',gotData)
+    
+    // Gets Json From The Endpoint and then does gotData()
+  
+  button.removeEventListener('click',advice)
+  // so button does not do anything when loading.
+  
+    button.innerHTML = 'Loading...'
+    output.innerHTML = 'Loading...'
+    // (loading...)
+}
+
+function gotData(data){
+    if(currentAdvice == data.slip.advice){
+        advice()
+    } // checks if the old and the newly generated reply aren't the same | if they are same it retrys.
+    else{
+        button.addEventListener('click',advice)
+        // as it has loaded
+        button.innerHTML = 'Generate Random Advice'
+        // as it has loaded
+        
+        currentAdvice = data.slip.advice;
+        output.innerHTML = currentAdvice
+        
+        // shows the advice and updates currentAdvice;
+        
+        /* Advice Json format :
+            data = {
+                "slip": { 
+                    "id": id of advice, 
+                    "advice": "advice"
+                }
+            }
+            
+            data.slip.advice is the advice
+        
+        */
+        
+        colorN = Math.floor(Math.random() * 5);
+        // For the Color
+        
+        if(currentColor == colorN){
+            colorN++;
+            // Orange background of card shows up less only when a yellow appears and if a yellow appears again it is changed to orange
+        }
+        
+        currentColor = colorN;
+        // updates currentColor
+        
+        
+        cont.style.background = 'var(--' + colors[colorN] + ')';
+        button.style.background = 'var(--' + colors[colorN] + ')';
+    }
+    
+        // bg color of button,card
+} // Runs on getting data
+</script>
+</html>
