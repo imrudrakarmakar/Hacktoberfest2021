@@ -19,8 +19,8 @@ function addNewNote(text = "") {
     note.innerHTML = `
         <div class="notes">
             <div class="tools">
-                <button class="edit"><i class="fas fa-edit"></i></button>
-                <button class="delete"><i class="fas fa-trash-alt"></i></button>
+                <button class="edit"><i class="fas fa-edit" data-toggle="tooltip" title="Save"></i></button>
+                <button class="delete"><i class="fas fa-trash-alt data-toggle="tooltip" title="Delete"></i></button>
             </div>
             <div class="main ${text ? "" : "hidden"}"></div>
             <textarea class="${text ? "hidden" : ""}"></textarea>
@@ -69,3 +69,6 @@ function updateLS() {
 
     localStorage.setItem("notes", JSON.stringify(notes));
 }
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
