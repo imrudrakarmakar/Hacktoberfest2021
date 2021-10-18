@@ -1,0 +1,127 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+h1,
+h2,
+h3,
+h4 {
+  text-transform: capitalize;
+  line-height: 1.25;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1.5;
+  }
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+}
+@media screen and (min-width: 992px) {
+  .section-center {
+    width: 95vw;
+  }
+}
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+nav {
+  height: 3rem;
+  font-weight: 100;
+  display: flex;
+  align-items: left;
+}
+.nav-center {
+  width: 90vw;
+  margin-left: 3rem;
+  margin-top: 2rem;
+  display: flex;
+  align-items: left;
+}
+.nav-center h4 {
+  margin-bottom: 0;
+}
+
+main {
+  min-height: calc(100vh - 3rem);
+  display: grid;
+  place-items: center;
+}
+.container {
+  text-transform: uppercase;
+  text-align: center;
+}
+.container h2 {
+  text-align: center;
+  font-weight: 300;
+  text-transform: uppercase;
+  padding: 1rem;
+  margin-bottom: 2.5rem;
+}
+.color {
+    text-transform: uppercase;
+    background-color: white;
+}
+
+.btn-hero {
+  text-transform: uppercase;
+  background: transparent;
+  display: inline-block;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  padding: 0.75rem 1.25rem;
+  color: white;
+  background: black;
+}
