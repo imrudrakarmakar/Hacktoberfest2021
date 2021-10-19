@@ -22,3 +22,10 @@ input{
     padding: 0 15px;
     cursor: pointer;
 }
+/*Add hover effect */
+
+#btn:hover{
+  cursor:poniter;
+  background-color: coral;
+  color:black;
+}
