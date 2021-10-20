@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DonateApp</title>
+</head>
+
+<style>
+    .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    }
+</style>
+
+<body class="container">
+    
+    <div id="sawo-container" style="height: 300px; width: 300px;"></div>
+
+
+    <script src="https://websdk.sawolabs.com/sawo.min.js"></script>    
+<script>
+    var config = {
+        // should be same as the id of the container created on 3rd step
+        containerID: "sawo-container",
+        // can be one of 'email' or 'phone_number_sms'
+        identifierType: "phone_number_sms",
+        // Add the API key copied from 2nd step
+        apiKey: "3fe686c4-f7aa-42a2-8f98-7e71e21a644a",
+        // Add a callback here to handle the payload sent by sdk
+        onSuccess: (payload) => {
+            window.location="./home.html"
+        },
+    };
+    var sawo = new Sawo(config);
+    sawo.showForm();
+</script>
+
+</body>
+</html>
